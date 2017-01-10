@@ -12,7 +12,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "HFDP\\Test\\": "tests"
+      "Test\\": "tests"
     }
   }
 }
