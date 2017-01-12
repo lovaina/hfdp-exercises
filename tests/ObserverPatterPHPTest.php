@@ -24,16 +24,19 @@ class ObserverPatterPHPTest extends \PHPUnit_Framework_TestCase
         
         $subject->attach($conditions);
         $subject->attach($statistics);
-        
+        $subject->setMeasurements(80,65,30.4);
         $display = $subject->notify();
         
-        $this->assertContains('HFDP\observer\PHPCurrentConditions - TEST', $display);
-        $this->assertContains('HFDP\observer\PHPStatisticsDisplay - TEST', $display);
-        
+        $this->assertContains('Current Conditions: Temp (Celsius): 80 Humidity (%): 65', $display);
+        $this->assertContains('Avg/Max/Min temperature: 80', $display);
+
+
         $subject->detach($statistics);
+        
+        $subject->setMeasurements(82,70,29.2);
         $display = $subject->notify();
 
-        $this->assertContains('HFDP\observer\PHPCurrentConditions - TEST', $display);
-        $this->assertNotContains('HFDP\observer\PHPStatisticsDisplay - TEST', $display);
+        $this->assertContains('Current Conditions: Temp (Celsius): 82 Humidity (%): 70', $display);
+        $this->assertNotContains('Avg/Max/Min temperature: 82', $display);
     }
 }

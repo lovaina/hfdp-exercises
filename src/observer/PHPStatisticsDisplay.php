@@ -13,9 +13,16 @@ use SplSubject;
 
 class PHPStatisticsDisplay implements \SplObserver
 {
+    private $temperature;
 
     public function update(SplSubject $subject)
     {
-        return __CLASS__ . ' - ' . $subject->getName();
+        $this->temperature = $subject->getTemperature();
+        return $this->display();
+    }
+
+    public function display()
+    {
+        return "Avg/Max/Min temperature: ".$this->temperature;
     }
 }

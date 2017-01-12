@@ -13,10 +13,19 @@ use SplSubject;
 
 class PHPCurrentConditions implements \SplObserver
 {
-
+    private $temperature;
+    private $humidity;
 
     public function update(SplSubject $subject)
     {
-        return __CLASS__ . ' - ' . $subject->getName();
+        $this->temperature = $subject->getTemperature();
+        $this->humidity = $subject->getHumidity();
+        return $this->display();
+        
+    }
+
+    public function display()
+    {
+        return "Current Conditions: Temp (Celsius): ".$this->temperature ." Humidity (%): ".$this->humidity;
     }
 }
