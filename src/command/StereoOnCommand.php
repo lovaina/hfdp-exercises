@@ -13,18 +13,23 @@ class StereoOnCommand implements CommandInterface
 {
 
     /** @var  Stereo */
-    protected $stero;
+    protected $stereo;
 
     public function __construct(Stereo $stereo)
     {
-        $this->stero = $stereo;
+        $this->stereo = $stereo;
     }
     public function execute()
     {
-      $data[] = $this->stero->off();
-      $data[] = $this->stero->setCd();
-      $data[] = $this->stero->setVolume(11);
+      $data[] = $this->stereo->on();
+      $data[] = $this->stereo->setCd();
+      $data[] = $this->stereo->setVolume(11);
 
         return $data;
+    }
+
+    public function undo()
+    {
+        return $this->stereo->off();
     }
 }

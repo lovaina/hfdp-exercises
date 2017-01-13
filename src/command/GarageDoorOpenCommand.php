@@ -21,4 +21,9 @@ class GarageDoorOpenCommand implements CommandInterface
     {
         return $this->garageDoor->up();
     }
+
+    public function undo()
+    {
+        return $this->garageDoor->down();
+    }
 }

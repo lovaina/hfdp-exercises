@@ -10,6 +10,7 @@ use HFDP\command\Light;
 use HFDP\command\LightOffCommand;
 use HFDP\command\LightOnCommand;
 use HFDP\command\RemoteControl;
+use HFDP\command\RemoteControlWithUndo;
 use HFDP\command\SimpleRemoteControl;
 use HFDP\command\Stereo;
 use HFDP\command\StereoOffCommand;
@@ -76,6 +77,23 @@ class CommandPatternTest extends \PHPUnit_Framework_TestCase
 
         $message = $remote->onButtonWasPushed(2);
         $this->assertInternalType('array', $message);
+
+    }
+
+    public function test_UndoButton()
+    {
+        $remote = new RemoteControlWithUndo();
+        $garageDoor = new GarageDoor();
+        $garageDoorOnCommand = new GarageDoorOpenCommand($garageDoor);
+        $garageDoorOffCommand = new GarageDoorCloseCommand($garageDoor);
+
+        $remote->setCommand(3, $garageDoorOnCommand, $garageDoorOffCommand);
+
+        $message = $remote->onButtonWasPushed(3);
+        $this->assertEquals('Garage Door is OPENED', $message);
+
+        $message = $remote->undoButtonWasPushed();
+        $this->assertEquals('Garage Door is CLOSED', $message);
 
 
     }

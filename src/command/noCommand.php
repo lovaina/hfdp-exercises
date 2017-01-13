@@ -9,7 +9,9 @@
 namespace HFDP\command;
 
 
-class noCommand
+class noCommand implements CommandInterface
 {
     public function execute() { return null; }
+
+    public function undo() {return null; }
 }

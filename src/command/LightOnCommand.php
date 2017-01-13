@@ -4,7 +4,7 @@
 namespace HFDP\command;
 
 
-class LightOnCommand implements CommandInterface
+class LightOnCommand implements CommandInterface 
 {
     protected $light;
 
@@ -15,5 +15,10 @@ class LightOnCommand implements CommandInterface
     public function execute()
     {
         return $this->light->on();
+    }
+
+    public function undo()
+    {
+        return $this->light->off();
     }
 }
