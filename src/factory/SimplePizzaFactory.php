@@ -10,13 +10,13 @@ class SimplePizzaFactory
         $pizza = null;
 
         if ($type = "cheese"){
-            $pizza = new CheesePizza();        
+            $pizza = new CheeseAbstractPizza();        
         } else if ($type = "pepperoni") { 
-            $pizza = new PepperoniPizza();        
+            $pizza = new PepperoniAbstractPizza();        
         } else if ($type = "clam") { 
-        $pizza = new ClamPizza();        
+        $pizza = new ClamAbstractPizza();        
         } else if ($type = "veggie") {
-        $pizza = new VeggiePizza();        
+        $pizza = new VeggieAbstractPizza();        
         }
 
         return $pizza; 
