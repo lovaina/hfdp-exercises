@@ -11,10 +11,18 @@ namespace HFDP\factory;
 
 abstract class AbstractPizza
 {
-   protected $name;
-   protected $dough;
-   protected $sauce;
-   protected $toppings = [];
+    protected $name;
+    /** @var  Dough */
+    protected $dough;
+    /** @var  Sauce */
+    protected $sauce;
+    protected $veggies = [];
+    /** @var  Cheese */
+    protected $cheese;
+    /** @var  Pepperoni */
+    protected $pepperoni;
+    /** @var  Clams */
+    protected $clams;
 
     public function prepare()
     {
@@ -23,17 +31,33 @@ abstract class AbstractPizza
 
     public function bake()
     {
-        // TODO: Implement bake() method.
+        return "Baking 25min at 350.";
     }
 
     public function cut()
     {
-        // TODO: Implement cut() method.
+        return "Cutting.";
     }
 
     public function box()
     {
-        // TODO: Implement box() method.
+        return "Puting pizza inside a box.";
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
 }

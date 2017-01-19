@@ -19,11 +19,11 @@ class ChicagoStylePIzzaStore extends PizzaStore
         if ($type = "cheese"){
             $pizza = new ChicagoStyleCheeseAbstractPizza();
         } else if ($type = "pepperoni") {
-            $pizza = new PepperoniAbstractPizza();
+            $pizza = new PepperoniPizza();
         } else if ($type = "clam") {
             $pizza = new ClamAbstractPizza();
         } else if ($type = "veggie") {
-            $pizza = new VeggieAbstractPizza();
+            $pizza = new VeggiePizza();
         }
 
         return $pizza;

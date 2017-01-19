@@ -14,15 +14,20 @@ class NYStylePIzzaStore extends PizzaStore
     public function createPizza($type)
     {
         $pizza = null;
+        $ingredientFactory = new NYPizzaIngredientFactory();
         //here will go the concrete integrations for NYStyle. In this casa, I didn't put all of them.
         if ($type = "cheese"){
-            $pizza = new NYStyleCheeseAbstractPizza();
+            $pizza = new CheesePizza($ingredientFactory);
+            $pizza->setName('“New York Style Cheese Pizza');
         } else if ($type = "pepperoni") {
-            $pizza = new PepperoniAbstractPizza();
+            $pizza = new PepperoniPizza($ingredientFactory);
+            $pizza->setName('“New York Style Pepperoni Pizza');
         } else if ($type = "clam") {
-            $pizza = new ClamAbstractPizza();
+            $pizza = new ClamPizza($ingredientFactory);
+            $pizza->setName('“New York Style Clam Pizza');
         } else if ($type = "veggie") {
-            $pizza = new VeggieAbstractPizza();
+            $pizza = new VeggiePizza($ingredientFactory);
+            $pizza->setName('“New York Style Veggie Pizza');
         }
 
         return $pizza;
