@@ -9,32 +9,16 @@
 namespace HFDP\template;
 
 
-class Coffee
+class Coffee extends CaffeineBeverage
 {
-    public function prepareRecipe()
-    {
-        $this->boilWater();
-        $this->brewCoffeeGrinds();
-        $this->pourInCup();
-        $this->addSugarAndMil();
-    }
 
-    public function boilWater()
-    {
-        return "Boiling Water";
-    }
 
-    public function brewCoffeeGrinds()
+    public function brew()
     {
         return "Dripping Coffee through filter";
     }
 
-    public function pourInCup()
-    {
-        return "Pouring into cup";
-    }
-
-    public function addSugarAndMil()
+    public function addCondiments()
     {
         return "Adding Suggar and Milk";
     }

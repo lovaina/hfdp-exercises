@@ -4,32 +4,17 @@
 namespace HFDP\template;
 
 
-class Tea
+class Tea extends CaffeineBeverage
 {
-    public function prepareRecipe()
-    {
-        $this->boilWater();
-        $this->steepTeaBag();
-        $this->pourInCup();
-        $this->addLemon();
-    }
 
-    public function boilWater()
-    {
-        return "Boiling Water";
-    }
 
-    public function steepTeaBag()
+    public function brew()
     {
         return "Steeping the tea";
     }
 
-    public function pourInCup()
-    {
-        return "Pouring into cup";
-    }
 
-    public function addLemon()
+    public function addCondiments()
     {
         return "Adding Lemon";
     }
