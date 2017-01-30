@@ -21,12 +21,12 @@ abstract class CaffeineBeverage
     abstract public function brew();
     abstract public function addCondiments();
 
-    public function boilWater()
+    final public function boilWater()
     {
         return "Boiling Water";
     }
 
-    public function pourInCup()
+    final public function pourInCup()
     {
         return "Pouring into cup";
     }
