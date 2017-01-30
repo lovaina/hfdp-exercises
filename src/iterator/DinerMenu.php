@@ -32,9 +32,9 @@ class DinerMenu
             $this->menuItems[] = $menuItem;
         }
     }
-
-    public function getMenuItems()
+    
+    public function createIterator()
     {
-        return $this->menuItems;
+        return new DinerMenuIterator($this->menuItems);
     }
 }

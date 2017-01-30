@@ -20,3 +20,4 @@ Observer Pattern| Estación metereológica
 Singleton Pattern| Chocolate Boiler
 Strategy Pattern| Los Patos y sus comportamiento (hacer cuak, vuelan, etc.)
 Template Pattern| Haciendo café o té
+Iterator Pattern| Menú de Pancakes y Menú de Cenas

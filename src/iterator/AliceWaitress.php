@@ -16,29 +16,26 @@ class AliceWaitress
 
     public function __construct(PancakeHouseMenu $pancakeHouseMenu, DinerMenu $dinerMenu)
     {
-        $this->pancakeMenu = $pancakeHouseMenu->getMenuItems();
-        $this->dinerMenu = $dinerMenu->getMenuItems();
+        $this->pancakeMenu = $pancakeHouseMenu;
+        $this->dinerMenu = $dinerMenu;
     }
 
     public function printMenu()
     {
-        foreach ($this->pancakeMenu as $key => $menuItem){
+        $pancakeIterator = $this->pancakeMenu->createIterator();
+        $dinerMenuIterator = $this->dinerMenu->createIterator();
 
+        $this->printIteratorMenu($pancakeIterator);
+        $this->printIteratorMenu($dinerMenuIterator);
+    }
+
+    private function printIteratorMenu(OwnIterator $iterator)
+    {
+        while ($iterator->hasNext()){
+            $menuItem = $iterator->next();
             echo $menuItem->getName(). '\n';
             echo $menuItem->getPrice(). '\n';
             echo $menuItem->getDescription(). '\n';
-            echo '----';
-
-        }
-
-
-        foreach ($this->dinerMenu as $key => $menuItem){
-
-            echo $menuItem->getName(). '\n';
-            echo $menuItem->getPrice(). '\n';
-            echo $menuItem->getDescription(). '\n';
-            echo '----';
-
         }
     }
 }

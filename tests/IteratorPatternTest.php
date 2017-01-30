@@ -17,8 +17,5 @@ class IteratorPatternTest extends \PHPUnit_Framework_TestCase
 {
     public function test_printMenu()
     {
-        $waitres = new AliceWaitress(new PancakeHouseMenu(), new DinerMenu());
-        
-        $waitres->printMenu();
     }
 }
