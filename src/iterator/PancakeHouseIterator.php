@@ -34,4 +34,9 @@ class PancakeHouseIterator implements OwnIterator
             return true;
         }
     }
+
+    public function remove()
+    {
+        // TODO: Implement remove() method.
+    }
 }

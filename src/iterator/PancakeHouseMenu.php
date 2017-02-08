@@ -9,7 +9,7 @@
 namespace HFDP\iterator;
 
 
-class PancakeHouseMenu
+class PancakeHouseMenu implements Menu
 {
     /** @var  array */
     protected $menuItems = [];

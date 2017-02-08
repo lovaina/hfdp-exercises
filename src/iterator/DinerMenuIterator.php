@@ -33,4 +33,9 @@ class DinerMenuIterator implements OwnIterator
             return true;
         }
     }
+
+    public function remove()
+    {
+        // TODO: Implement remove() method.
+    }
 }

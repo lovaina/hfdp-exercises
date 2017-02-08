@@ -13,4 +13,5 @@ interface OwnIterator
 {
     public function hasNext();
     public function next();
+    public function remove();
 }
