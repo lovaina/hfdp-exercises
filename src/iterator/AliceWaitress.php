@@ -14,7 +14,7 @@ class AliceWaitress
     protected $pancakeMenu;
     protected $dinerMenu;
 
-    public function __construct(MenuItem $pancakeHouseMenu, Menu $dinerMenu)
+    public function __construct(Menu $pancakeHouseMenu, Menu $dinerMenu)
     {
         $this->pancakeMenu = $pancakeHouseMenu;
         $this->dinerMenu = $dinerMenu;
