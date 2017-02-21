@@ -29,3 +29,14 @@ Chain of responsability | Comportamiento |
 Observer Pattern| Otros | Estación metereológica
 
 url: https://diego.com.es/patrones-de-diseno-en-php
+
+### Consola
+
+Además de probarlo mediante PhpUnit también utilizo la librería [symphony/console](http://symfony.com/doc/current/components/console.html) para probar algunos patrones.
+
+Listado de comandos
+```
+php hfdp.php hfdp:strategy-pattern
+```
+
+
