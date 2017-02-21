@@ -17,5 +17,6 @@ class IteratorPatternTest extends \PHPUnit_Framework_TestCase
 {
     public function test_printMenu()
     {
+        //Bucar Array y ArrayObject y HashTable
     }
 }
