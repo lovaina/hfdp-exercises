@@ -19,13 +19,13 @@ class NYStylePIzzaStore extends PizzaStore
         if ($type = "cheese"){
             $pizza = new CheesePizza($ingredientFactory);
             $pizza->setName('“New York Style Cheese Pizza');
-        } else if ($type = "pepperoni") {
+        } else if ($type == "pepperoni") {
             $pizza = new PepperoniPizza($ingredientFactory);
             $pizza->setName('“New York Style Pepperoni Pizza');
-        } else if ($type = "clam") {
+        } else if ($type == "clam") {
             $pizza = new ClamPizza($ingredientFactory);
             $pizza->setName('“New York Style Clam Pizza');
-        } else if ($type = "veggie") {
+        } else if ($type == "veggie") {
             $pizza = new VeggiePizza($ingredientFactory);
             $pizza->setName('“New York Style Veggie Pizza');
         }
