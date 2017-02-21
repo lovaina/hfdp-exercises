@@ -4,10 +4,13 @@
     "phpunit/phpunit": "^5.6"
   },
   "minimum-stability": "stable",
-  "require": {},
+  "require": {
+    "symfony/console": "^3.2"
+  },
   "autoload": {
     "psr-4": {
-      "HFDP\\": "src"
+      "HFDP\\": "src",
+      "HFDPConsole\\": "console"
     }
   },
   "autoload-dev": {
