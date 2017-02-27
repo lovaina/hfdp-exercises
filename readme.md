@@ -39,4 +39,5 @@ Listado de comandos
 php hfdp.php hfdp:strategy-pattern
 ```
 
+Nota: La clase Command está basada en el la Clase Command de Laravel.
 
