@@ -27,6 +27,7 @@ Iterator Pattern| Comportamiento | Menú de Pancakes y Menú de Cenas
 Command Pattern| Comportamiento | Dispositivo que enciende y apaga otros dispositivos
 Chain of responsability | Comportamiento |
 Observer Pattern| Otros | Estación metereológica
+State Pattern | | Máquina chicles
 
 url: https://diego.com.es/patrones-de-diseno-en-php
 
