@@ -4,13 +4,15 @@
 namespace Tests;
 
 
+use HFDP\state\FormerGumballMachine;
 use HFDP\state\GumballMachine;
+use HFDP\state\NoQuarterState;
 
 class StatePatternTest extends \PHPUnit_Framework_TestCase
 {
-    public function test_gumballMachine()
+    public function test_formerGumballMachine()
     {
-        $gumballMachine = new GumballMachine(5);
+        $gumballMachine = new FormerGumballMachine(5);
         $this->assertEquals('no_quarter', $gumballMachine->getState());
 
         $this->assertEquals('You inserted a quarter', $gumballMachine->insertQuarter());
@@ -38,5 +40,22 @@ class StatePatternTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals('You can\'t insert a quarter, the machine is sold out', $gumballMachine->insertQuarter());
         $this->assertEquals('You turned but there are no gumballs', $gumballMachine->turnCrank());
+    }
+
+    public function test_GumbballMachine(){
+        $machine = new GumballMachine(2);
+        $this->assertInstanceOf('HFDP\state\NoQuarterState', $machine->getState());
+        $this->assertEquals('You inserted a quarter', $machine->insertQuarter());
+        $this->assertEquals('A gumball comes rolling out of the lot', $machine->turnCranck());
+
+        $this->assertInstanceOf('HFDP\state\NoQuarterState', $machine->getState());
+
+        $this->assertEquals('You inserted a quarter', $machine->insertQuarter());
+        $this->assertEquals('Get the last gumball of the machine', $machine->turnCranck());
+        $this->assertInstanceOf('HFDP\state\SoldOutState', $machine->getState());
+
+
+
+
     }
 }

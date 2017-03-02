@@ -1,0 +1,8 @@
+
+1. Buscar un exemple per al Iterator Pattern tipus:
+    - Array
+    - Array Object
+    - Hastable
+
+2. Mira la classe Command de Laravel e intenta fer el mateix per a extendrela després amb funcions de tipus
+    info, comment, error, per afegir automáticament y evitar escriure les etiquetes
