@@ -20,7 +20,9 @@ class GumballMachine
 
     protected $count;
 
-    public function __construct($numberGumballs)
+    protected $location;
+
+    public function __construct($location, $numberGumballs)
     {
         $this->soldOutState = new SoldOutState($this);
         $this->noQuarterState = new NoQuarterState($this);
@@ -34,6 +36,7 @@ class GumballMachine
         }else{
             $this->state = $this->soldOutState;
         }
+        $this->location = $location;
     }
 
     public function insertQuarter()
@@ -92,6 +95,11 @@ class GumballMachine
     public function getCount()
     {
         return $this->count;
+    }
+
+    public function getLocation()
+    {
+        return $this->location;
     }
 
 
