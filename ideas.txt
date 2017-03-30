@@ -6,3 +6,9 @@
 
 2. Mira la classe Command de Laravel e intenta fer el mateix per a extendrela després amb funcions de tipus
     info, comment, error, per afegir automáticament y evitar escriure les etiquetes
+
+3. Mirar esta librería para implementar algunos ejemplos del libro:
+    https://github.com/schmittjoh/php-collection
+
+4. Tenere en cuenta esta página:
+    https://www.ma-no.org/en/content/index_php-list-of-best-awesome-php-libraries_1988.php
