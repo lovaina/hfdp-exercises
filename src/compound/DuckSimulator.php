@@ -6,12 +6,23 @@ namespace HFDP\Compound;
 
 class DuckSimulator
 {
+    /** @var CountingDuckFactory  */
+    protected $factory;
+
+    /**
+     * DuckSimulator constructor.
+     */
+    public function __construct()
+    {
+        $this->factory = new CountingDuckFactory();
+    }
+
     public function simulate()
     {
-        $mallard = new QuackCounter(new MallardDuck());
-        $redhead = new QuackCounter(new RedheadDuck());
-        $duckCall = new QuackCounter(new DuckCall());
-        $rubber = new QuackCounter(new RubberDuck());
+        $mallard = $this->factory->createMallardDuck();
+        $redhead = $this->factory->createRedHeadDuck();
+        $duckCall = $this->factory->createDuckCall();
+        $rubber = $this->factory->createRubberDuck();
         $goose = new GooseAdapter(new Goose());
 
         $message = [];
