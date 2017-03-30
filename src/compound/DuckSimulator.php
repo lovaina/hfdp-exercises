@@ -12,6 +12,7 @@ class DuckSimulator
         $redhead = new RedheadDuck();
         $duckCall = new DuckCall();
         $rubber = new RubberDuck();
+        $goose = new GooseAdapter(new Goose());
 
         $message = [];
 
@@ -19,6 +20,7 @@ class DuckSimulator
         $message[] = $this->duckSimulate($redhead);
         $message[] = $this->duckSimulate($duckCall);
         $message[] = $this->duckSimulate($rubber);
+        $message[] = $this->duckSimulate($goose);
 
         return $message;
     }
