@@ -17,6 +17,7 @@ class CompoundPatternTest extends \PHPUnit_Framework_TestCase
         $simulator =  new DuckSimulator();
         $this->duck = $simulator->simulate();
     }
+
     public function test_Simulator()
     {
         $this->assertContains('Quack', $this->duck);
@@ -30,6 +31,7 @@ class CompoundPatternTest extends \PHPUnit_Framework_TestCase
         });
 
         $this->assertCount(2, $count);
+
     }
 
     public function test_Goose()
@@ -46,4 +48,10 @@ class CompoundPatternTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse(method_exists($gooseAdapter, 'honk'));
 
     }
+
+    public function test_QuackCounter()
+    {
+        $this->assertEquals(4, $this->duck['count']);
+    }
+
 }
