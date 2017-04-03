@@ -4,7 +4,7 @@
 namespace HFDP\Compound;
 
 
-interface Quackable
+interface Quackable extends QuackObservable
 {
     public function quack();
     

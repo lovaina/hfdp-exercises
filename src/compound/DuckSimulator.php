@@ -63,6 +63,8 @@ class DuckSimulator
         $mallardFlock->add($mallard3);
         $mallardFlock->add($mallard4);
 
+        $quackologist = new Quackologist();
+        $mallardFlock->registerObserver($quackologist);
         $message = array_merge($message, $mallardFlock->quack());
 
         $message['count'] = QuackCounter::getQuacks();

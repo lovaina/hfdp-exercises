@@ -35,4 +35,20 @@ class Flock implements Quackable
 
         return $quack;
     }
+
+    public function registerObserver(Observer $observer)
+    {
+        $iterator = $this->quackers->getIterator();
+        $duck = [];
+
+        while ($iterator->valid()){
+            $duck[] = $iterator->current()->registerObserver($observer);
+            $iterator->next();
+        }
+    }
+
+    public function notifyObservers()
+    {
+        //
+    }
 }
