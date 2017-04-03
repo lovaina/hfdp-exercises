@@ -32,7 +32,6 @@ class Observable implements QuackObservable
         $iterator = $this->observers->getIterator();
         $display = [];
 
-
         while ($iterator->valid()){
             $display[] = $iterator->current()->update($this->duck);
             $iterator->next();
