@@ -16,6 +16,8 @@ Decorator Pattern| Estructural | Cafetería: Café con 2 de azucar y con leche d
 Facade Pattern| Estructural | HomeTheatre
 Bridge |Esctructural|
 Proxy | Estructural |
+Composite | Estructural |
+Flyweight | Estructural |
 Factory Pattern| Creacional | Tienda de Pizzas. Abstract Factory: Tienda de Pizzas según zona NY o California
 Singleton Pattern| Creacional | Chocolate Boiler
 Builder | Creacional |
@@ -26,6 +28,10 @@ Template Pattern| Comportamiento | Haciendo café o té
 Iterator Pattern| Comportamiento | Menú de Pancakes y Menú de Cenas
 Command Pattern| Comportamiento | Dispositivo que enciende y apaga otros dispositivos
 Chain of responsability | Comportamiento |
+Mediator | Comportamiento |
+Memento | Comportamiento |
+Visitor | Comportamiento |
+Interpreter | Comportamiento |
 Observer Pattern| Otros | Estación metereológica
 State Pattern | | Máquina de chicles
 
